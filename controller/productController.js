@@ -14,5 +14,5 @@ const addProducts = (req, res) => {
         price: req.body.price,
         description: req.body.description,
         published: req.body.published ? req.body.published : false
-    }
+    };
 };
