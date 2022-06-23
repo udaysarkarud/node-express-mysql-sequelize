@@ -5,14 +5,17 @@ const port = process.env.Port || 5000;
 const app = express();
 dotenv.config();
 
-//middleware
+//Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
+// Testinh API
 app.get('/',(req,res)=>{
-    res.status(200).json('Backend is runing')
-})
-// dummy route
+    res.status(200).json({message:'Server is runing'})
+});
+
+// Sever Listen
 app.listen(port,()=>{
-    console.log('Server is runing at port', port)
+    console.log('Server is runing on port:', port)
 });
